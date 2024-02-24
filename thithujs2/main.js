@@ -35,8 +35,6 @@ function render(data) {
             
           
         </tr>
-
-        
         `
     });
     table.innerHTML = text

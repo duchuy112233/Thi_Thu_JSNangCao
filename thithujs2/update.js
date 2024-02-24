@@ -1,6 +1,6 @@
 const searchParam = new URLSearchParams(document.location.search);
-
 const id = searchParam.get("id");
+
 
 const prdName = document.querySelector("#name")
 const prdPrice = document.querySelector("#price")
@@ -19,16 +19,13 @@ fetch("http://localhost:3000/products/" + id)
     });
 
 updateForm.addEventListener("submit", (event) => {
-
     event.preventDefault();
-
 
     let updateData = {
         "name": prdName.value,
         "price": prdPrice.value,
         "image": prdImg.value
     };
-
 
      // Kiểm tra trường "Tên sản phẩm"
      if (prdName.value.trim().length === 0) {
@@ -56,24 +53,6 @@ updateForm.addEventListener("submit", (event) => {
         },
         body: JSON.stringify(updateData)
     }).then(() => (window.location = "./index.html"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 });
 
